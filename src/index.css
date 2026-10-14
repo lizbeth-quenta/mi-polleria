@@ -1,0 +1,102 @@
+:root {
+  --uva: #4A1942;
+  --fucsia: #D81B73;
+  --turquesa: #0E8A8A;
+  --mostaza: #F2A900;
+  --lila: #F6F1F7;
+  --borde: #DDD3E0;
+  --texto: #2A1727;
+  --suave: #6F5F6E;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--lila); color: var(--texto); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+h1, h2, h3, .marca { font-family: Georgia, "Times New Roman", serif; color: var(--uva); line-height: 1.2; }
+h2 { font-size: 1.8rem; margin: 0 0 1rem; }
+h3 { font-size: 1.15rem; margin: 1.4rem 0 .6rem; }
+a { color: var(--turquesa); }
+:focus-visible { outline: 3px solid var(--mostaza); outline-offset: 2px; }
+
+/* Franja de aguayo: el detalle distintivo */
+.aguayo { height: 12px; background: repeating-linear-gradient(90deg,
+  var(--fucsia) 0 36px, var(--mostaza) 36px 48px, var(--turquesa) 48px 84px, var(--uva) 84px 96px); }
+.aguayo.grueso { height: 22px; }
+
+.barra { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem 1.4rem; padding: .8rem 1.5rem; background: #fff; }
+.barra .marca { font-size: 1.25rem; }
+.barra nav { display: flex; gap: 1.1rem; flex: 1; }
+.barra nav a { text-decoration: none; color: var(--suave); padding: .2rem 0; border-bottom: 3px solid transparent; }
+.barra nav a.active { color: var(--uva); border-bottom-color: var(--fucsia); font-weight: 600; }
+.insignia { background: var(--fucsia); color: #fff; border-radius: 99px; font-size: .75rem; padding: 0 .45rem; margin-left: .35rem; }
+.usuario { color: var(--suave); font-size: .95rem; }
+
+.contenedor { max-width: 1050px; margin: 0 auto; padding: 1.5rem; }
+
+/* Botones */
+.btn, .btn-linea, .mini, .chip, .pestanas button { font: inherit; cursor: pointer; border-radius: 6px; }
+.btn { background: var(--fucsia); color: #fff; border: 0; padding: .55rem 1.1rem; font-weight: 600; text-decoration: none; display: inline-block; }
+.btn:hover { background: #B8155F; }
+.btn:disabled { background: #C9BDCB; cursor: not-allowed; }
+.btn.grande { width: 100%; padding: .75rem; margin-top: .6rem; text-align: center; }
+.btn-linea { background: transparent; border: 1.5px solid var(--uva); color: var(--uva); padding: .35rem .8rem; }
+.btn-linea:hover { background: var(--uva); color: #fff; }
+.btn-linea.peligro { border-color: #B3261E; color: #B3261E; }
+.btn-linea.peligro:hover { background: #B3261E; color: #fff; }
+.mini { width: 1.8rem; height: 1.8rem; border: 1.5px solid var(--borde); background: #fff; }
+
+/* Formularios */
+label { display: block; font-size: .9rem; font-weight: 600; margin: .7rem 0 0; flex: 1; }
+input, select, textarea { display: block; width: 100%; margin-top: .25rem; padding: .5rem .6rem; font: inherit; border: 1.5px solid var(--borde); border-radius: 6px; background: #fff; }
+input[type="color"] { padding: .15rem; height: 2.4rem; }
+.fila { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; }
+.fila.entre { justify-content: space-between; align-items: center; }
+.error { color: #B3261E; font-weight: 600; }
+.aviso { background: #E3F4F2; border-left: 4px solid var(--turquesa); padding: .5rem .8rem; }
+
+/* Login */
+.login-pagina { min-height: 100vh; }
+.login-caja { max-width: 420px; margin: 2rem auto; padding: 1.6rem; background: #fff; border-radius: 10px; border: 1px solid var(--borde); }
+.login-caja h1 { margin: 0 0 .2rem; font-size: 1.7rem; }
+.demo { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--borde); }
+.pestanas { display: flex; gap: .4rem; margin: 1rem 0; border-bottom: 2px solid var(--borde); }
+.pestanas button { background: none; border: 0; padding: .5rem 1rem; color: var(--suave); border-bottom: 3px solid transparent; margin-bottom: -2px; border-radius: 0; }
+.pestanas button.activa { color: var(--uva); font-weight: 700; border-bottom-color: var(--fucsia); }
+
+/* Catálogo */
+.filtros { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: 1rem; }
+.filtros input { max-width: 220px; margin: 0; }
+.chip { background: #fff; border: 1.5px solid var(--borde); padding: .35rem .9rem; border-radius: 99px; }
+.chip.activa { background: var(--uva); color: #fff; border-color: var(--uva); }
+.grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; }
+.tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.foto { height: 170px; background-size: cover; background-position: center; display: flex; align-items: flex-end; }
+.bastas-visual { display: flex; flex-direction: column; width: 100%; padding-bottom: 6px; }
+.bastas-visual i { height: 4px; margin-top: 4px; background: rgba(255,255,255,.55); }
+.tarjeta-cuerpo { padding: .9rem; display: flex; flex-direction: column; gap: .15rem; flex: 1; }
+.tarjeta-cuerpo h3 { margin: 0; }
+.tarjeta-cuerpo .btn { margin-top: auto; }
+.tarjeta-cuerpo p { margin: 0; }
+.precio { font-weight: 700; font-size: 1.15rem; color: var(--fucsia); }
+.suave { color: var(--suave); }
+.alerta { color: #B3261E; font-weight: 600; }
+.vacio { background: #fff; padding: 1.2rem; border: 1px dashed var(--borde); border-radius: 8px; color: var(--suave); }
+
+/* Paneles y tablas */
+.panel { background: #fff; border: 1px solid var(--borde); border-left: 5px solid var(--turquesa); border-radius: 8px; padding: 1rem 1.2rem; margin: 1rem 0; }
+.panel h3 { margin-top: 0; }
+.scroll-x { overflow-x: auto; margin-top: 1rem; }
+.tabla { width: 100%; border-collapse: collapse; background: #fff; }
+.tabla th, .tabla td { padding: .6rem .8rem; text-align: left; border-bottom: 1px solid var(--borde); }
+.tabla th { background: var(--uva); color: #fff; font-weight: 600; }
+.total { font-size: 1.3rem; font-weight: 700; text-align: right; }
+.estado { background: var(--mostaza); color: var(--uva); font-weight: 700; padding: .1rem .7rem; border-radius: 99px; font-size: .85rem; }
+.indicadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+.indicador { background: #fff; border: 1px solid var(--borde); border-top: 5px solid var(--fucsia); border-radius: 8px; padding: .9rem 1rem; }
+.indicador span { display: block; color: var(--suave); font-size: .9rem; }
+.indicador strong { font-family: Georgia, serif; font-size: 1.7rem; color: var(--uva); }
+.consola { background: #2B1A2A; color: #E8DDE7; padding: 1rem; border-radius: 8px; overflow-x: auto; max-height: 300px; font: 13px/1.6 ui-monospace, Menlo, Consolas, monospace; }
+
+@media (max-width: 600px) {
+  .contenedor { padding: 1rem; }
+  .barra { padding: .8rem 1rem; }
+  .barra nav { order: 3; flex-basis: 100%; }
+}
